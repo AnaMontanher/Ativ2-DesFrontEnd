@@ -27,25 +27,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   btn_anag.addEventListener("click", function () {
-    const input_first = document.getElementById("first-word").value;
-    const input_second = document.getElementById("second-word").value;
+    let input_first = document.getElementById("first-word").value;
+    let input_second = document.getElementById("second-word").value;
     anagram.setAttribute("class", "actived");
     anagram.style = "display: flex;";
     anagram.innerHTML = areAnagrams(input_first, input_second);
   });
 
-  const vetorDivs = document.getElementsByClassName("actived");
-
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener("click", function () {
-      for (let j = 0; j < vetorDivs.length; j++) {
-        if (
-          vetorDivs[j] !== undefined &&
-          vetorDivs[j].getAttribute("class") === "actived"
-        ) {
-          vetorDivs[j].style = "display: none";
+      switch (i) {
+        case 0:
+          console.log("clicou");
+          resultado.style = "display: none";
           inputs[i].value = "";
-        }
+          break;
+        case 1:
+          invertido.style = "display: none";
+          inputs[i].value = "";
+          break;
+        case 2:
+          acronym.style = "display: none";
+          inputs[i].value = "";
+          break;
+        case 3:
+          anagram.style = "display: none";
+          inputs[i].value = "";
+          break;
+        case 4:
+          anagram.style = "display: none";
+          inputs[i].value = "";
+          break;
+        default:
       }
     });
   }

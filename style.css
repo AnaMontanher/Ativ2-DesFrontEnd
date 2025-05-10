@@ -3,7 +3,9 @@
 }
 .container {
   margin-top: 50px;
-  max-width: 700px;
+}
+.navbar-brand{
+  overflow: hidden;
 }
 
 .mb-3 {
@@ -12,9 +14,6 @@
 
 .form-label {
   margin-bottom: 0.75rem;
-}
-.input-group > .form-control {
-  min-width: 20rem;
 }
 
 .actived {
@@ -28,6 +27,7 @@
 }
 
 :root {
+  text-align: justify ;
   --bs-font-sans-serif: "Public Sans", sans-serif;
   --bs-body-input-color: #212529d0;
 }
@@ -52,4 +52,13 @@
 .form-control {
   border-color: #adb5bd;
   color: var(--bs-body-input-color);
+}
+
+@media (min-width: 700px) {
+  .input-group > .form-control {
+    min-width: 20rem;
+  }
+  .container {
+    max-width: 700px;
+  }
 }

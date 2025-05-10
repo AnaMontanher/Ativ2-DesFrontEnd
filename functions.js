@@ -58,14 +58,11 @@ function areAnagrams(str1, str2) {
   const vetorStr2 = str2.toUpperCase().split("");
   vetorStr1.sort();
   vetorStr2.sort();
-  if (vetorStr1.length == vetorStr2.length) {
-    for (let i = 0; i < vetorStr1.length; i++) {
-      if (vetorStr1[i] === vetorStr2[i]) {
-        return "As duas palavras são anagramas.";
-      } else {
-        return "As duas palavras não são anagramas.";
-      }
-    }
+  const joinStr1 = vetorStr1.join("");
+  const joinStr2 = vetorStr2.join("");
+
+  if (joinStr1 == joinStr2) {
+    return "As duas palavras são anagramas.";
   } else {
     return "As duas palavras não são anagramas.";
   }
