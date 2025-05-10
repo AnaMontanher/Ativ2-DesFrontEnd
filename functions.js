@@ -1,0 +1,78 @@
+function countWordOccurrences(string) {
+  const vetor = string.split(" "); //vetor = [“Oi”,”meu”,”nome”, “é”,”Ana”,…]
+  const ocorrencias = []; //vetor para armazenar letras c/ cap. invertida
+  for (let i = 0; i < vetor.length; i++) {
+    let count = 0;
+    let linha = [];
+    for (let j = 0; j < vetor.length; j++) {
+      if (vetor[i] === vetor[j]) {
+        count = count + 1;
+      }
+    }
+    linha.push(vetor[i]);
+    linha.push(count);
+    ocorrencias.push(linha);
+  }
+  return `Palavra - Número de ocorrências <br> ${ocorrencias}`;
+}
+
+function invertCapitalization(str) {
+  //função que inverte a capitalização da palavra
+  const allUpper = str.toUpperCase().split(""); //transformando a string toda em letra maiúscula
+  const allLower = str.toLowerCase().split(""); //transformando a string toda em letra minúscula
+  let newStr = []; //para armazenar a nova string
+  for (let i = 0; i < str.length; i++) {
+    //laço que percorre a palavra inserida
+    if (allUpper.includes(str[i])) {
+      // para verificar se a letra[i] é maiuscula
+      let newLetter = str[i].toLowerCase();
+      newStr.push(newLetter);
+    } else if (allLower.includes(str[i])) {
+      // para verificar se a letra[i] é minuscula
+      let newLetter = str[i].toUpperCase();
+      newStr.push(newLetter);
+    } else {
+      // se str[i]===espaços [" "]
+      newStr.push(str[i]);
+    }
+  }
+  newStr = newStr.join("");
+  return newStr;
+}
+
+function generateAcronym(str) {
+  //Função que gera um acrônimo
+  const palavras = str.split(" "); //transformando a string em vetor com cada palavra sendo um elemento
+  const acronimo = []; //para armazenar a primeira letra de cada palavra
+  for (let i = 0; i < palavras.length; i++) {
+    //laço que percorre os elementos do vetor
+    let letra = palavras[i].slice(0, 1); //retirando apenas a primeira letra
+    acronimo.push(letra.toUpperCase()); //colocando letra em maiúsculo e inserindo no vetor do acronimo
+  }
+  const acronimoFinal = acronimo.join(""); //unindo todos elementos sem espaço entre eles
+  return acronimoFinal;
+}
+
+function areAnagrams(str1, str2) {
+  const vetorStr1 = str1.toUpperCase().split(""); //colocando todas as palavras em
+  const vetorStr2 = str2.toUpperCase().split("");
+  vetorStr1.sort();
+  vetorStr2.sort();
+  if (vetorStr1.length == vetorStr2.length) {
+    for (let i = 0; i < vetorStr1.length; i++) {
+      if (vetorStr1[i] === vetorStr2[i]) {
+        return "As duas palavras são anagramas.";
+      } else {
+        return "As duas palavras não são anagramas.";
+      }
+    }
+  } else {
+    return "As duas palavras não são anagramas.";
+  }
+}
+
+function activedResult(nomeInput, nomeDiv, nomeFuncao) {
+  nomeDiv.setAttribute("class", "actived");
+  nomeDiv.style = "display: flex;";
+  nomeDiv.innerHTML = nomeFuncao(nomeInput);
+}

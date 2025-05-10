@@ -1,0 +1,55 @@
+.bg-body-tertiary {
+  background-color: #8752ea97 !important;
+}
+.container {
+  margin-top: 50px;
+  max-width: 700px;
+}
+
+.mb-3 {
+  margin-bottom: 1.75rem !important;
+}
+
+.form-label {
+  margin-bottom: 0.75rem;
+}
+.input-group > .form-control {
+  min-width: 20rem;
+}
+
+.actived {
+  background-color: #edf2f7af;
+  border: 1px solid #9a66f97e;
+  border-radius: 0.75rem !important;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+:root {
+  --bs-font-sans-serif: "Public Sans", sans-serif;
+  --bs-body-input-color: #212529d0;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #905af77e !important;
+  --bs-btn-border-color: var(--bs-btn-color);
+  --bs-btn-hover-bg: var(--bs-btn-color);
+  --bs-btn-hover-border-color: var(--bs-btn-color);
+  --bs-btn-active-bg: var(--bs-btn-color);
+  --bs-btn-active-border-color: var(--bs-btn-color);
+  --bs-btn-disabled-color: var(--bs-btn-color);
+  --bs-btn-disabled-border-color: var(--bs-btn-color);
+}
+.form-control:focus {
+  color: var(--bs-body-input-color);
+  background-color: #fff;
+  border-color: #adb5bd;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem #ad8aee7e;
+}
+.form-control {
+  border-color: #adb5bd;
+  color: var(--bs-body-input-color);
+}
