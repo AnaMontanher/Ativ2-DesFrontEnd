@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener("click", function () {
+    inputs[i].addEventListener("focus", function () {
       switch (i) {
         case 0:
           resultado.style = "display: none";
