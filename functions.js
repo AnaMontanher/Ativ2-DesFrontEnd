@@ -1,19 +1,24 @@
 function countWordOccurrences(string) {
   const vetor = string.split(" "); //vetor = [“Oi”,”meu”,”nome”, “é”,”Ana”,…]
-  const ocorrencias = []; //vetor para armazenar letras c/ cap. invertida
+  let ocorrencias = []; //vetor para armazenar letras c/ cap. invertida
   for (let i = 0; i < vetor.length; i++) {
     let count = 0;
-    let linha = [];
     for (let j = 0; j < vetor.length; j++) {
       if (vetor[i] === vetor[j]) {
         count = count + 1;
       }
     }
-    linha.push(vetor[i]);
-    linha.push(count);
-    ocorrencias.push(linha);
+    if (
+      !ocorrencias.includes(`<tr><td>${vetor[i]}</td> <td> ${count}</td> </tr>`)
+    ) {
+      ocorrencias.push(`<tr><td>${vetor[i]}</td> <td> ${count}</td> </tr>`);
+    }
   }
-  return `Palavra - Número de ocorrências <br> ${ocorrencias}`;
+  ocorrencias = ocorrencias.join("");
+  return `<table>
+  <tr><th>Palavra</th><th> Número de ocorrências</th></tr>
+          ${ocorrencias}
+          </table>`;
 }
 
 function invertCapitalization(str) {

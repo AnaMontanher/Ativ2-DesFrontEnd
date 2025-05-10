@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
     inputs[i].addEventListener("click", function () {
       switch (i) {
         case 0:
-          console.log("clicou");
           resultado.style = "display: none";
           inputs[i].value = "";
           break;
