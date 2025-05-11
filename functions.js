@@ -1,4 +1,5 @@
 function countWordOccurrences(string) {
+  string = string.replace(/[,.]/g, "");
   const vetor = string.split(" "); //vetor = [“Oi”,”meu”,”nome”, “é”,”Ana”,…]
   let ocorrencias = []; //vetor para armazenar letras c/ cap. invertida
   for (let i = 0; i < vetor.length; i++) {
@@ -59,6 +60,8 @@ function generateAcronym(str) {
 }
 
 function areAnagrams(str1, str2) {
+  str1 = str1.replace(/[,.]/g, "");
+  str2 = str2.replace(/[,.]/g, "");
   const vetorStr1 = str1.toUpperCase().split(""); //colocando todas as palavras em
   const vetorStr2 = str2.toUpperCase().split("");
   vetorStr1.sort();
