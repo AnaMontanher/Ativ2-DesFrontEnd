@@ -1,4 +1,4 @@
-function countWordOccurrences(string) {
+const countWordOccurrences = (string) => {
   string = string.replace(/[,.]/g, "");
   const vetor = string.split(" "); //vetor = [“Oi”,”meu”,”nome”, “é”,”Ana”,…]
   let ocorrencias = []; //vetor para armazenar letras c/ cap. invertida
@@ -20,9 +20,9 @@ function countWordOccurrences(string) {
   <tr><th>Palavra</th><th> Número de ocorrências</th></tr>
           ${ocorrencias}
           </table>`;
-}
+};
 
-function invertCapitalization(str) {
+const invertCapitalization = (str) => {
   //função que inverte a capitalização da palavra
   const allUpper = str.toUpperCase().split(""); //transformando a string toda em letra maiúscula
   const allLower = str.toLowerCase().split(""); //transformando a string toda em letra minúscula
@@ -44,9 +44,9 @@ function invertCapitalization(str) {
   }
   newStr = newStr.join("");
   return newStr;
-}
+};
 
-function generateAcronym(str) {
+const generateAcronym = (str) => {
   //Função que gera um acrônimo
   const palavras = str.split(" "); //transformando a string em vetor com cada palavra sendo um elemento
   const acronimo = []; //para armazenar a primeira letra de cada palavra
@@ -57,27 +57,27 @@ function generateAcronym(str) {
   }
   const acronimoFinal = acronimo.join(""); //unindo todos elementos sem espaço entre eles
   return acronimoFinal;
-}
+};
 
-function areAnagrams(str1, str2) {
+const areAnagrams = (str1, str2) => {
   str1 = str1.replace(/[,.]/g, "");
   str2 = str2.replace(/[,.]/g, "");
-  const vetorStr1 = str1.toUpperCase().split(""); //colocando todas as palavras em
-  const vetorStr2 = str2.toUpperCase().split("");
+  let vetorStr1 = str1.toUpperCase().split(""); //colocando todas as palavras em
+  let vetorStr2 = str2.toUpperCase().split("");
   vetorStr1.sort();
   vetorStr2.sort();
-  const joinStr1 = vetorStr1.join("");
-  const joinStr2 = vetorStr2.join("");
+  let joinStr1 = vetorStr1.join("");
+  let joinStr2 = vetorStr2.join("");
 
   if (joinStr1 == joinStr2) {
-    return "As duas palavras são anagramas.";
+    return `"${str1}" e "${str2}" são anagramas`;
   } else {
-    return "As duas palavras não são anagramas.";
+    return `"${str1}" e "${str2}" NÃO são anagramas`;
   }
-}
+};
 
-function activedResult(nomeInput, nomeDiv, nomeFuncao) {
+const activedResult = (nomeInput, nomeDiv, nomeFuncao) => {
   nomeDiv.setAttribute("class", "actived");
   nomeDiv.style = "display: flex;";
   nomeDiv.innerHTML = nomeFuncao(nomeInput);
-}
+};

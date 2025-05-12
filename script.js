@@ -11,27 +11,39 @@ document.addEventListener("DOMContentLoaded", function () {
   const anagram = document.getElementById("result-4");
   const inputs = document.getElementsByClassName("form-control");
 
+  const verifyEmptyValue = (input, nomeDiv, nomeFuncao) => {
+    if (input == "") {
+      return;
+    } else {
+      activedResult(input, nomeDiv, nomeFuncao);
+    }
+  };
+
   btn_count.addEventListener("click", function () {
     const input_count = document.getElementById("input-count").value;
-    activedResult(input_count, resultado, countWordOccurrences);
+    verifyEmptyValue(input_count, resultado, countWordOccurrences);
   });
 
   btn_invert.addEventListener("click", function () {
     const input_invert = document.getElementById("input-invert").value;
-    activedResult(input_invert, invertido, invertCapitalization);
+    verifyEmptyValue(input_invert, invertido, invertCapitalization);
   });
 
   btn_acron.addEventListener("click", function () {
     const input_acron = document.getElementById("input-acron").value;
-    activedResult(input_acron, acronym, generateAcronym);
+    verifyEmptyValue(input_acron, acronym, generateAcronym);
   });
 
   btn_anag.addEventListener("click", function () {
     let input_first = document.getElementById("first-word").value;
     let input_second = document.getElementById("second-word").value;
-    anagram.setAttribute("class", "actived");
-    anagram.style = "display: flex;";
-    anagram.innerHTML = areAnagrams(input_first, input_second);
+    if (input_first == "" || input_second == "") {
+      return;
+    } else {
+      anagram.setAttribute("class", "actived");
+      anagram.style = "display: flex;";
+      anagram.innerHTML = areAnagrams(input_first, input_second);
+    }
   });
 
   for (let i = 0; i < inputs.length; i++) {
